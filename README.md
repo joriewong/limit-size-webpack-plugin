@@ -1,1 +1,1 @@
-# p-webpack-plugin
+# limit-size-webpack-plugin
