@@ -28,3 +28,5 @@ class LimitSizePlugin {
     );
   }
 }
+
+export default LimitSizePlugin
