@@ -33,6 +33,10 @@ module.exports = {
 +        limit: "200 Kb",
 +        gzip: true,
 +      },
++      {
++        path: path.resolve(__dirname, "dist", "bundle.js"),
++        limit: "50 b",
++      },
 +    ]),
   ],
 };
