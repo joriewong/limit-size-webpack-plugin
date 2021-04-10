@@ -6,6 +6,9 @@
   "engines": {
     "node": ">= 10.13.0"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files"
   },
