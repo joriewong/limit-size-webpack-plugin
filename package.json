@@ -1,6 +1,6 @@
 {
   "name": "limit-size-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A webpack plugin with `limit-size`",
   "main": "dist/index.js",
   "engines": {
@@ -10,7 +10,13 @@
     "dist"
   ],
   "scripts": {
-    "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files"
+    "start": "npm run build -- -w",
+    "clean": "del-cli dist",
+    "build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+    "lint:prettier": "prettier --list-different .",
+    "lint:js": "eslint --cache .",
+    "lint": "npm-run-all -l -p \"lint:**\"",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -30,14 +36,23 @@
     "@babel/cli": "^7.13.14",
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
-    "cross-env": "^7.0.3"
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "standard-version": "^9.2.0"
   },
   "dependencies": {
     "byte-parser": "^1.0.0",
     "chalk": "^2.4.2",
     "zlib": "^1.0.5"
-  },
-  "peerDependencies": {
-    "webpack": "^4.46.0"
   }
 }
