@@ -10,6 +10,7 @@ function gzipSize(path) {
     let size = 0;
     const pipe = fs.createReadStream(path).pipe(createGzip({ level: 9 }));
 
+    /* eslint-disable  no-unused-expressions */
     pipe.on("error", reject);
     pipe.on("data", (buf) => {
       size += buf.length;
@@ -17,6 +18,7 @@ function gzipSize(path) {
     pipe.on("end", () => {
       resolve(size);
     });
+    /* eslint-disable  no-unused-expressions */
   });
 }
 
@@ -26,7 +28,7 @@ function gzipSize(path) {
  */
 function statSize(path) {
   return new Promise((resolve, reject) => {
-    fs.stat(path, function (err, stats) {
+    fs.stat(path, (err, stats) => {
       err ? reject() : resolve(stats.size);
     });
   });
@@ -37,6 +39,7 @@ function statSize(path) {
  * @param path
  * @param gzip
  */
-export async function fileSize(path, gzip) {
+export default async function fileSize(path, gzip) {
+  // eslint-disable-next-line no-return-await
   return gzip ? await gzipSize(path) : await statSize(path);
 }

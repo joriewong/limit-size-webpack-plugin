@@ -13,8 +13,8 @@
     "start": "npm run build -- -w",
     "clean": "del-cli dist",
     "build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
-    "lint:prettier": "prettier --list-different .",
-    "lint:js": "eslint --cache .",
+    "lint:prettier": "prettier --list-different . --write",
+    "lint:js": "eslint --cache . --fix",
     "lint": "npm-run-all -l -p \"lint:**\"",
     "release": "standard-version"
   },

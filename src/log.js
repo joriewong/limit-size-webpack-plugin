@@ -1,7 +1,8 @@
 import chalk from "chalk";
+
 import { format } from "./bytes";
 
-export function logResult(result) {
+export default function logResult(result) {
   result.forEach((r) => {
     const { config, passed, bytes, limitBytes } = r;
     const { path, limit, gzip } = config;
@@ -34,7 +35,7 @@ export function logResult(result) {
       "\n",
     ];
 
-    // 打印
+    // eslint-disable-next-line no-console
     console.log(logs.join(""));
   });
 }
