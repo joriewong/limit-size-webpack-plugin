@@ -20,7 +20,6 @@ export class LimitSizePlugin {
       // 3. help doc
       const success = result.every((r) => r.passed);
       if (!success) {
-        // eslint-disable-next-line no-console
         console.log(
           chalk.bold.yellow(
             'Try to reduce size or increase limit in "limit-size"'
