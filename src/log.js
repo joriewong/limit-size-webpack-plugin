@@ -35,7 +35,6 @@ export default function logResult(result) {
       "\n",
     ];
 
-    // eslint-disable-next-line no-console
     console.log(logs.join(""));
   });
 }
