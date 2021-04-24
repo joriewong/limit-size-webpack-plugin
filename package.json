@@ -17,7 +17,8 @@
     "lint:prettier": "prettier --list-different . --write",
     "lint:js": "eslint --cache . --fix",
     "lint": "npm-run-all -l -p \"lint:**\"",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
